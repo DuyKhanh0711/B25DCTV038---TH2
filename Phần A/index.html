@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Thư viện Sách</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <h1>Thư viện của lớp</h1>
+        <div class="favorite-counter">❤️ Sách yêu thích: <span id="favoriteCount">0</span></div>
+    </header>
+
+    <main class="container">
+       
+        <section class="toolbar">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên sách...">
+            <select id="genreFilter">
+                <option value="">Tất cả thể loại</option>
+            </select>
+        </section>
+
+        <div id="statusBar" class="status-bar">Đang tải...</div>
+
+        <section id="bookGrid" class="book-grid"></section>
+
+        <section class="form-section">
+            <h2>Thêm sách mới</h2>
+            <form id="addBookForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Tên sách:</label>
+                    <input type="text" id="name" required>
+                    <small class="error-msg" id="error-name"></small>
+                </div>
+                <div class="form-group">
+                    <label for="author">Tác giả:</label>
+                    <input type="text" id="author" required>
+                    <small class="error-msg" id="error-author"></small>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Thể loại:</label>
+                    <select id="genre" required>
+                        <option value="">-- Chọn thể loại --</option>
+                        <option value="Công nghệ">Công nghệ</option>
+                        <option value="Khoa học">Khoa học</option>
+                        <option value="Văn học">Văn học</option>
+                    </select>
+                    <small class="error-msg" id="error-genre"></small>
+                </div>
+                <div class="form-group">
+                    <label for="year">Năm xuất bản:</label>
+                    <input type="number" id="year" required>
+                    <small class="error-msg" id="error-year"></small>
+                </div>
+                <button type="submit" class="btn-submit">Thêm sách</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
